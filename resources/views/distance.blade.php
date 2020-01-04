@@ -5,7 +5,7 @@
     <div class="text-center pb-1"><h1>Distance Calculation</h1></div>
     <div class="row">
     <div class="dropdown pr-5">
-         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Units From
          </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

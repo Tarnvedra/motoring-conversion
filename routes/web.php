@@ -18,15 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/distance', function () {return view('distance');});
-Route::get('/consumption', function () {return view('consumption');});
-Route::get('/electrical', function () {return view('electrical');});
-Route::get('/force', function () {return view('force');});
-Route::get('/pressure', function () {return view('pressure');});
-Route::get('/mass', function () {return view('mass');});
-Route::get('/velocity', function () {return view('velocity');});
-Route::get('/torque', function () {return view('torque');});
-Route::get('/volume', function () {return view('volume');});
-Route::get('/retrieve', function () {return view('retrieve');});
-Route::get('/power', function () {return view('power');});
-Route::get('/temperature', function () {return view('temperature');});
+Route::get('/distance', 'DistanceController@display');
+Route::get('/consumption', 'ConsumptionController@display');
+Route::get('/electrical', 'ElectricalController@display');
+Route::get('/force', 'ForceController@display');
+Route::get('/pressure', 'PressureController@display');
+Route::get('/mass', 'MassController@display');
+Route::get('/velocity', 'VelocityController@display');
+Route::get('/torque', 'TorqueController@display');
+Route::get('/volume', 'VolumeController@display');
+Route::get('/retrieve', 'RetrieveController@display');
+Route::get('/power', 'PowerController@display');
+Route::get('/temperature', 'TemperatureController@display');
