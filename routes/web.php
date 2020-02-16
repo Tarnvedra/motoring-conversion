@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/distance', 'DistanceController@display');
+Route::post('/distance', 'DistanceController@calculate');
 Route::get('/consumption', 'ConsumptionController@display');
 Route::get('/electrical', 'ElectricalController@display');
 Route::get('/force', 'ForceController@display');

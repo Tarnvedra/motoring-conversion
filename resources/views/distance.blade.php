@@ -13,9 +13,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Application CSS and JS files-->
 	<link rel="stylesheet" href="{{ asset('css/conversion.css') }}">
-    <script src="{{ asset('js/conversion.js') }}"></script>
+   <script src="{{ asset('js/conversion.js') }}"></script> 
     <title>Motoring Converter</title>
     
 </head>
@@ -26,29 +27,31 @@
            <div class="col-lg-3">
            <h3 class="pr-1">Units From</h3>
              <form>
+             <div class="form-group">
              <div class="form-check">
-                <input class="form-check-input" type="radio" name="unitsfrom" id="frominches" value="1">
+                <input class="form-check-input" type="radio" name="unitsfrom" id="frominches" checked="checked" value="frominches">
                 <label class="form-check-label" for="frominches">Inches</label>
              </div>
              <div class="form-check">
-                <input class="form-check-input" type="radio" name="unitsfrom" id="frommm" value="2">
+                <input class="form-check-input" type="radio" name="unitsfrom" id="frommm" value="frommm">
                 <label class="form-check-label" for="frommm">Millimetres</label>
              </div>
              <div class="form-check">
-                 <input class="form-check-input" type="radio" name="unitsfrom" id="fromfeet" value="3" >
+                 <input class="form-check-input" type="radio" name="unitsfrom" id="fromfeet" value="fromfeet">
                  <label class="form-check-label" for="fromfeet">Feet</label>
              </div>
              <div class="form-check">
-                 <input class="form-check-input" type="radio" name="unitsfrom" id="frommetres" value="4" >
+                 <input class="form-check-input" type="radio" name="unitsfrom" id="frommetres" value="frommeters">
                  <label class="form-check-label" for="frommetres">Metres</label>
             </div>
             <div class="form-check">
-                 <input class="form-check-input" type="radio" name="unitsfrom" id="frommiles" value="5" >
+                 <input class="form-check-input" type="radio" name="unitsfrom" id="frommiles" value="frommiles">
                  <label class="form-check-label" for="frommiles">Miles</label>
             </div>
             <div class="form-check">
-                 <input class="form-check-input" type="radio" name="unitsfrom" id="fromkm" value="6" >
+                 <input class="form-check-input" type="radio" name="unitsfrom" id="fromkm" value="fromkm">
                  <label class="form-check-label" for="fromkm">Kilometres</label>
+            </div>
             </div>
             </form>
           </div>
@@ -60,7 +63,7 @@
                  <label class="form-check-label" for="toinches">Inches</label>
               </div>
               <div class="form-check">
-                 <input class="form-check-input" type="radio" name="unitsto" id="tommm" value="2">
+                 <input class="form-check-input" type="radio" name="unitsto" id="tommm" value="2" checked="checked">
                  <label class="form-check-label" for="tomm">Millimetres</label>
               </div>
               <div class="form-check">
@@ -104,17 +107,18 @@
     
     <div class="row pt-5">
       <div class="col-lg-4">
-        <form name="calculate">
+        <form name="calculate" action="{{url('/distance')}}" method="post" >
           <div class="form-check">
               <label class="form-check-label" for="calcvalue">Enter Numerical Quantity:</label>
               <input type="number" class="form-control" placeholder="Units From" step="any" name="calcvalue" id="calcvalue" value=""/>
            
           </div>
-          <div class="form-check">
-              <input type="button" type="submit" class="btn btn-primary" onclick="distance()" value ="Calculate"/>
-              <button type="submit" class="btn btn-danger">Reset</button>
-              <button type="submit" class="btn btn-info">Save</button>
-              <button type="submit" class="btn btn-info"><a href="{{url('/home')}}">Dashboard</a></button>
+          <div class="form-check p-4">
+          {{csrf_field()}}
+              <button type="submit" class="btn btn-info" onsubmit="distance()">Calculate</button>
+              <button type="button" class="btn btn-danger">Reset</button>
+              <button type="button" class="btn btn-info">Save</button>
+              <button type="button" class="btn btn-info"><a href="{{url('/home')}}">Dashboard</a></button>
           </div>  
       </form>
     </div>
@@ -127,7 +131,7 @@
         </div>
         <div class="card-block">
           
-          <p class="card-text">Inches: </br>
+          <p class="card-text" id="results">Inches:       </br>
                                Millimetres: </br>
                                Feet: </br>
                                Metres: </br>
@@ -138,6 +142,6 @@
       </div>
     </div>
     </div>
-
+  
   </body>
 </html>
