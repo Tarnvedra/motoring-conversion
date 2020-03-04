@@ -64,6 +64,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .dashicon {
+                max-width: auto;
+                height: 100px;
+            }
         </style>
     </head>
     <body>
