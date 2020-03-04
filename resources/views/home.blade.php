@@ -27,7 +27,7 @@
 
     <div class="row">
     <div class="d-flex pt-1">
-        <div class="pr-5"><a href="{{url('/power')}}"><img src="img/power.svg"height="150" width="150" ></a>
+        <div class="pr-5"><a href="{{url('/power')}}"><img src="img/power.svg" height="150" width="150" ></a>
         <figcaption>Power</figcaption></div>
         <div class="pr-5"><a href="{{url('/velocity')}}"><img src="img/speed.svg" height="150" width="150"></a>
         <figcaption>Velocity</figcaption></div>
