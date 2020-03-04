@@ -5,11 +5,11 @@
     <div class="text-center pb-3"><h1>Motoring Conversion Dashboard</h1></div>
    <div class="row">
     <div class="d-flex pt-1">
-        <div class="pr-5"><a href="{{url('/distance')}}"><img src="{{URL::asset('img/length.svg')}}" height="200" width="200"></a>
+        <div class="pr-5"><a href="{{url('/distance')}}"><img src="public/img/length.svg" height="150" width="150"></a>
         <figcaption>Distance</figcaption></div>
-        <div class="pr-5"><a href="{{url('/volume')}}"><img src="{{URL::asset('img/volume.svg')}}" height="200" width="200"></a>
+        <div class="pr-5"><a href="{{url('/volume')}}"><img src="img/volume.svg" height="150" width="150"></a>
         <figcaption>Volume</figcaption></div>
-        <div><a href="{{url('/mass')}}"><img src="{{URL::asset('img/weight.svg')}}" height="200" width="200"></a>
+        <div><a href="{{url('/mass')}}"><img src="img/weight.svg" height="200" width="200"></a>
         <figcaption>Mass</figcaption></div>
     </div>
     </div>
