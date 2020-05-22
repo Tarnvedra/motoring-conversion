@@ -31,3 +31,5 @@ Route::get('/volume', 'VolumeController@display');
 Route::get('/retrieve', 'RetrieveController@display');
 Route::get('/power', 'PowerController@display');
 Route::get('/temperature', 'TemperatureController@display');
+Route::get('ajaxRequest', 'AjaxController@ajaxRequest');
+Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');

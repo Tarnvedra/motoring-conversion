@@ -1,3 +1,66 @@
+/* $(document).ready(function() {
+
+  $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+ 
+  $(".btn-submit").click(function(e){
+
+      e.preventDefault();
+ 
+      var unitsFrom = $("input[name=unistfrom]").val();
+      var unitsTo = $("input[name=unitsto]").val();
+      var calcvalue = $("input[name=calcvalue]").val();
+ 
+      $.ajax({
+         type:'POST',
+         url:"{{ route('distance.post') }}",
+         data:{name:unitsFrom, name:unitsTo, name:calcvalue},
+         success:function(data){
+            alert(data.success);
+            var user = JSON.stringify(data.entry);
+            alert('You entered: '+ user);
+         },
+         //cache: false;
+      });
+
+});
+
+});
+
+*/
+
+/*
+$(document).ready(function(){
+
+document.getElementById('dpost').addEventListener('click', postDistance);
+
+
+function postDistance() {
+
+  //console.log('post distance function called');
+  //distance();
+
+  var convertFrom = document.getElementsByName('unitsfrom');
+  var convertTo = document.getElementsByName('unitsto');
+  calc = 10;
+  //alert(convertFrom);
+  //alert(convertTo);
+  //alert('calc val ='+calc)
+
+  axios.post('/distance', {
+
+    unitsfrom: convertFrom,
+    unitsto: convertTo,
+    calcvalue: calc,
+    cache: false
+  })
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+}
+
 function distance()
  {
     var convertFrom = document.getElementsByName('unitsfrom');
@@ -82,3 +145,5 @@ function distance()
           document.write('unknown selection');
     } 
  }
+
+}) */

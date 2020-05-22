@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class DistanceController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function display()
    {
         return view('distance');
@@ -27,7 +33,7 @@ class DistanceController extends Controller
     $results[3][0] = 'meters'; 
     $results[4][0] = 'miles';
     $results[5][0] = 'kilometers';
-
+    
 
      switch ($unitsSelected) {
 
@@ -87,10 +93,11 @@ class DistanceController extends Controller
        
         break;
      }
+     return response()->json([$request->all()]);
 
-     return view('distance')->with($results);
+     //return view('distance')->with('result' ,$results);
   }
-     //dd($request->all()); 
+     
   
     
 }

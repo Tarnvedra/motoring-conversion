@@ -1,6 +1,6 @@
 <template>
     
-            <div class="card">
+            <div class="card" style="width: 30rem;">
                 <div class="card-header">Algebraic Formula</div>
                  <div class="card-block">
                     <h5 class="card-title">Inches to Millimetres</h5>
@@ -20,7 +20,8 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            console.log('Formula Update Component mounted.')
         }
+
     }
 </script>
