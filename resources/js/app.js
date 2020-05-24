@@ -19,10 +19,10 @@ window.axios = require('axios');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-Vue.component('calculation-form', require('./components/CalculationForm.vue').default);
-Vue.component('formula-update', require('./components/FormulaUpdate.vue').default);
-Vue.component('calculation-update', require('./components/CalculationUpdate.vue').default);
-
+Vue.component('distance-calculation-form', require('./components/DistanceCalculationForm.vue').default);
+Vue.component('distance-formula-update', require('./components/DistanceFormulaUpdate.vue').default);
+Vue.component('distance-calculation-update', require('./components/DistanceCalculationUpdate.vue').default);
+Vue.component('save-calculation', require('./components/SaveCalculation.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

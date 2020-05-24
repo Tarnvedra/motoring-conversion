@@ -20,7 +20,7 @@
         
     
        
-    name: "CalculationUpdate",
+    name: "DistanceCalculationUpdate",
     props:  { unitsFrom : '',
         unitsTo : '',
         calcValue: '',

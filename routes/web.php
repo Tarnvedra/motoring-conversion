@@ -33,3 +33,5 @@ Route::get('/power', 'PowerController@display');
 Route::get('/temperature', 'TemperatureController@display');
 Route::get('ajaxRequest', 'AjaxController@ajaxRequest');
 Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
+Route::get('/save' , 'SaveController@index');
+Route::post('/save' ,'SaveController@store');

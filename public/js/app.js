@@ -1899,10 +1899,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationForm.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationForm.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1987,6 +1987,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    ResetCalculation: function ResetCalculation() {
+      resetDisplay = '                  <br> ' + '                    <br> ' + '                 <br> ' + '               <br> ' + '                <br> ';
+      console.log(resetDisplay);
+      document.getElementById("display").innerHTML = resetDisplay;
+    },
     submit: function submit(e) {
       e.preventDefault();
       var currentObj = this;
@@ -2076,17 +2081,17 @@ __webpack_require__.r(__webpack_exports__);
             break;
 
           case "fromfoot":
-            result[0] = calc; // feet entered value
+            result[0] = calc; // foot entered value
 
-            result[1] = calc * 12; // feet to inches  
+            result[1] = calc * 12; // foot to inches  
 
-            result[2] = calc * 305; // feet to milimetres
+            result[2] = calc * 305; // foot to milimetres
 
-            result[3] = calc / 3.281; //feet to metres
+            result[3] = calc / 3.281; //foot to metres
 
-            result[4] = calc / 5280; //feet to miles
+            result[4] = calc / 5280; //foot to miles
 
-            result[5] = calc / 3281; //feet to km
+            result[5] = calc / 3281; //foot to km
 
             result[6] = 'foot';
             result[7] = 'inches';
@@ -2104,14 +2109,25 @@ __webpack_require__.r(__webpack_exports__);
             break;
 
           case "frommetres":
-            result[0] = calc; // metres entered milimetres
+            result[0] = calc; // metres entered value
 
-            result[1] = calc;
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc;
-            result[5] = calc;
-            result[9] = result[9] + ' <b>converted to =</b>';
+            result[1] = calc * 39.37; // metres to inches
+
+            result[2] = calc * 1000; // metres to mm
+
+            result[3] = calc * 3.281; // metres to foot
+
+            result[4] = calc / 1609; //metres to miles
+
+            result[5] = calc / 1000; //metres to km
+
+            result[6] = 'metres';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'miles';
+            result[11] = 'km';
+            result[6] = result[6] + ' <b>converted to =</b>';
 
             for (var j = 0; j < 6; j++) {
               display = display + result[j] + ' : ' + result[j + 6] + '<br>';
@@ -2121,14 +2137,25 @@ __webpack_require__.r(__webpack_exports__);
             break;
 
           case "frommiles":
-            result[0] = calc; // miles enterd value
+            result[0] = calc; // miles entered value
 
-            result[1] = calc;
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc;
-            result[5] = calc;
-            result[10] = result[10] + ' <b>converted to =</b>';
+            result[1] = calc * 63360; // miles to inches 
+
+            result[2] = calc * 1.609e+6; // miles to mm
+
+            result[3] = calc * 5280; // miles to foot
+
+            result[4] = calc * 1609; // miles to metres
+
+            result[5] = calc * 1.609; // miles to km
+
+            result[6] = 'miles';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'metres';
+            result[11] = 'km';
+            result[6] = result[6] + ' <b>converted to =</b>';
 
             for (var j = 0; j < 6; j++) {
               display = display + result[j] + ' : ' + result[j + 6] + '<br>';
@@ -2138,14 +2165,25 @@ __webpack_require__.r(__webpack_exports__);
             break;
 
           case "fromkm":
-            result[0] = calc; // km enterd value
+            result[0] = calc; // km entered value
 
-            result[1] = calc;
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc;
-            result[5] = calc;
-            result[11] = result[11] + ' <b>converted to =</b>';
+            result[1] = calc * 39370; // km to inches
+
+            result[2] = calc * 1e+6; // km to mm
+
+            result[3] = calc * 3281; // km to foot
+
+            result[4] = calc * 1000; // km to metres
+
+            result[5] = calc / 1.609; // km to miles
+
+            result[6] = 'km';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'metres';
+            result[11] = 'miles';
+            result[6] = result[6] + ' <b>converted to =</b>';
 
             for (var j = 0; j < 6; j++) {
               display = display + result[j] + ' : ' + result[j + 6] + '<br>';
@@ -2164,10 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2189,7 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CalculationUpdate",
+  name: "DistanceCalculationUpdate",
   props: {
     unitsFrom: '',
     unitsTo: '',
@@ -2204,10 +2242,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2237,6 +2275,54 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Formula Update Component mounted.');
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    console.log('Save Calculation Component mounted.');
+  }
+});
+
+function goBack() {
+  var x = history.length;
+  console.log(x);
+  window.history.go();
+}
 
 /***/ }),
 
@@ -6771,10 +6857,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6783,7 +6869,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nul[data-v-44500d17] {\r\n    list-style: none;\n}\r\n", ""]);
+exports.push([module.i, "\nul[data-v-0c3121bc] {\r\n    list-style: none;\n}\r\n", ""]);
 
 // exports
 
@@ -37900,15 +37986,15 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -38514,10 +38600,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38565,12 +38651,19 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row pt-2" }, [
-      _c("div", { staticClass: "col-lg-6" }, [_c("formula-update")], 1),
+      _c(
+        "div",
+        { staticClass: "col-lg-6" },
+        [_c("distance-formula-update")],
+        1
+      ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-lg-6" },
-        [_c("calculation-update", { attrs: { display: _vm.display } })],
+        [
+          _c("distance-calculation-update", { attrs: { display: _vm.display } })
+        ],
         1
       )
     ])
@@ -38750,20 +38843,21 @@ var staticRenderFns = [
       ),
       _vm._v(" "),
       _c(
-        "a",
-        { staticClass: "btn btn-danger active", attrs: { href: "/distance" } },
+        "button",
+        {
+          staticClass: "btn btn-danger active",
+          attrs: { type: "submit", onsubmit: "ResetCalculation()" }
+        },
         [_vm._v("Reset")]
       ),
       _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-success", attrs: { type: "button" } },
-        [_vm._v("Save")]
-      ),
+      _c("a", { staticClass: "btn btn-success active", attrs: { href: "#" } }, [
+        _vm._v("Save")
+      ]),
       _vm._v(" "),
       _c(
         "a",
-        { staticClass: "btn btn-secondary active", attrs: { href: "/home'" } },
+        { staticClass: "btn btn-secondary active", attrs: { href: "/home" } },
         [_vm._v("Dashboard")]
       )
     ])
@@ -38775,10 +38869,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38813,10 +38907,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4& ***!
-  \****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f& ***!
+  \************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38861,6 +38955,101 @@ var staticRenderFns = [
           _vm._v("\n            1 in\t*\t25.4 mm"),
           _c("br"),
           _vm._v("\n            1 in\t=\t25.4 mm\n        ")
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("form", [
+        _c("h1", { staticClass: "text-center" }, [
+          _vm._v(" Save your current calculation")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-check col-md-6 pt-2" }, [
+          _c(
+            "label",
+            { staticClass: "form-check-label", attrs: { for: "calcvalue" } },
+            [_vm._v("Enter Title of calculation:")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "text", name: "title", id: "title", value: "" }
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "form-check-label", attrs: { for: "calcvalue" } },
+            [_vm._v("Enter Description of calculation:")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "description",
+              id: "description",
+              value: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-check pt-2" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { id: "savecalc", type: "submit" }
+            },
+            [_vm._v("Save Calculation")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger active",
+              attrs: { onclick: "goBack()" }
+            },
+            [_vm._v("Cancel")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-secondary active",
+              attrs: { href: "/home" }
+            },
+            [_vm._v("Dashboard")]
+          )
         ])
       ])
     ])
@@ -51055,9 +51244,10 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('calculation-form', __webpack_require__(/*! ./components/CalculationForm.vue */ "./resources/js/components/CalculationForm.vue")["default"]);
-Vue.component('formula-update', __webpack_require__(/*! ./components/FormulaUpdate.vue */ "./resources/js/components/FormulaUpdate.vue")["default"]);
-Vue.component('calculation-update', __webpack_require__(/*! ./components/CalculationUpdate.vue */ "./resources/js/components/CalculationUpdate.vue")["default"]);
+Vue.component('distance-calculation-form', __webpack_require__(/*! ./components/DistanceCalculationForm.vue */ "./resources/js/components/DistanceCalculationForm.vue")["default"]);
+Vue.component('distance-formula-update', __webpack_require__(/*! ./components/DistanceFormulaUpdate.vue */ "./resources/js/components/DistanceFormulaUpdate.vue")["default"]);
+Vue.component('distance-calculation-update', __webpack_require__(/*! ./components/DistanceCalculationUpdate.vue */ "./resources/js/components/DistanceCalculationUpdate.vue")["default"]);
+Vue.component('save-calculation', __webpack_require__(/*! ./components/SaveCalculation.vue */ "./resources/js/components/SaveCalculation.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51139,17 +51329,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationForm.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/CalculationForm.vue ***!
-  \*****************************************************/
+/***/ "./resources/js/components/DistanceCalculationForm.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationForm.vue ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculationForm.vue?vue&type=template&id=00d18112&scoped=true& */ "./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true&");
-/* harmony import */ var _CalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalculationForm.vue?vue&type=script&lang=js& */ "./resources/js/components/CalculationForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true& */ "./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true&");
+/* harmony import */ var _DistanceCalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DistanceCalculationForm.vue?vue&type=script&lang=js& */ "./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51159,67 +51349,67 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _CalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _DistanceCalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "00d18112",
+  "605fe9dd",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/CalculationForm.vue"
+component.options.__file = "resources/js/components/DistanceCalculationForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationForm.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/CalculationForm.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationForm.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true&":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true& ***!
-  \************************************************************************************************/
+/***/ "./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true& ***!
+  \********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationForm.vue?vue&type=template&id=00d18112&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationForm.vue?vue&type=template&id=00d18112&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationForm.vue?vue&type=template&id=605fe9dd&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationForm_vue_vue_type_template_id_00d18112_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationForm_vue_vue_type_template_id_605fe9dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationUpdate.vue":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/CalculationUpdate.vue ***!
-  \*******************************************************/
+/***/ "./resources/js/components/DistanceCalculationUpdate.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationUpdate.vue ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true& */ "./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true&");
-/* harmony import */ var _CalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalculationUpdate.vue?vue&type=script&lang=js& */ "./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& */ "./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&");
+/* harmony import */ var _DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true& */ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true&");
+/* harmony import */ var _DistanceCalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DistanceCalculationUpdate.vue?vue&type=script&lang=js& */ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& */ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51230,82 +51420,82 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _CalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _DistanceCalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "44500d17",
+  "0c3121bc",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/CalculationUpdate.vue"
+component.options.__file = "resources/js/components/DistanceCalculationUpdate.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js&":
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************/
+/***/ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationUpdate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationUpdate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& ***!
-  \****************************************************************************************************************/
+/***/ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=style&index=0&id=44500d17&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_style_index_0_id_44500d17_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=style&index=0&id=0c3121bc&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_style_index_0_id_0c3121bc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true&":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true& ***!
-  \**************************************************************************************************/
+/***/ "./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true& ***!
+  \**********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CalculationUpdate.vue?vue&type=template&id=44500d17&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceCalculationUpdate.vue?vue&type=template&id=0c3121bc&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculationUpdate_vue_vue_type_template_id_44500d17_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceCalculationUpdate_vue_vue_type_template_id_0c3121bc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/FormulaUpdate.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/FormulaUpdate.vue ***!
-  \***************************************************/
+/***/ "./resources/js/components/DistanceFormulaUpdate.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/DistanceFormulaUpdate.vue ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormulaUpdate.vue?vue&type=template&id=2265edf4& */ "./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4&");
-/* harmony import */ var _FormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormulaUpdate.vue?vue&type=script&lang=js& */ "./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js&");
+/* harmony import */ var _DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f& */ "./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f&");
+/* harmony import */ var _DistanceFormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DistanceFormulaUpdate.vue?vue&type=script&lang=js& */ "./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51315,9 +51505,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _DistanceFormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -51327,38 +51517,107 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/FormulaUpdate.vue"
+component.options.__file = "resources/js/components/DistanceFormulaUpdate.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FormulaUpdate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FormulaUpdate.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceFormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceFormulaUpdate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceFormulaUpdate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f& ***!
+  \******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FormulaUpdate.vue?vue&type=template&id=2265edf4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FormulaUpdate.vue?vue&type=template&id=2265edf4&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DistanceFormulaUpdate.vue?vue&type=template&id=677e0d7f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormulaUpdate_vue_vue_type_template_id_2265edf4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DistanceFormulaUpdate_vue_vue_type_template_id_677e0d7f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SaveCalculation.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/SaveCalculation.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true& */ "./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true&");
+/* harmony import */ var _SaveCalculation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SaveCalculation.vue?vue&type=script&lang=js& */ "./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SaveCalculation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3f138b71",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SaveCalculation.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SaveCalculation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SaveCalculation.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SaveCalculation.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SaveCalculation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SaveCalculation.vue?vue&type=template&id=3f138b71&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SaveCalculation_vue_vue_type_template_id_3f138b71_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -40,9 +40,9 @@
         
               <button id="dpost" type="submit"  class="btn btn-primary">Calculate</button>
     
-            <a href="/distance" class="btn btn-danger active">Reset</a>
-            <button type="button" class="btn btn-success">Save</button>
-            <a href="/home'" class="btn btn-secondary active">Dashboard</a>    
+            <button type="submit" onsubmit="ResetCalculation()" class="btn btn-danger active">Reset</button>
+            <a href="#"  class="btn btn-success active">Save</a>
+            <a href="/home" class="btn btn-secondary active">Dashboard</a>    
         
    
             
@@ -53,12 +53,12 @@
  </div>
  <div class="row pt-2">
     <div class="col-lg-6">
-    <formula-update></formula-update>
+    <distance-formula-update></distance-formula-update>
     </div>
    
     <div class="col-lg-6">
         
-     <calculation-update v-bind:display="display"></calculation-update> 
+     <distance-calculation-update v-bind:display="display"></distance-calculation-update> 
      
        </div>
   </div>
@@ -80,7 +80,14 @@
         result: []  
     }
   },
-  methods: { 
+  methods:  
+  { ResetCalculation: function() {
+
+    resetDisplay = '                  <br> ' +'                    <br> ' +  '                 <br> ' + '               <br> ' +  '                <br> ';
+    console.log(resetDisplay);
+
+    document.getElementById("display").innerHTML = resetDisplay;
+  },
         submit(e) {
         e.preventDefault();
         let currentObj = this;
@@ -162,12 +169,12 @@
           break
 
         case "fromfoot":
-            result[0] = calc; // feet entered value
-            result[1] = calc * 12; // feet to inches  
-            result[2] = calc * 305; // feet to milimetres
-            result[3] = calc / 3.281; //feet to metres
-            result[4] = calc / 5280; //feet to miles
-            result[5] = calc / 3281; //feet to km
+            result[0] = calc; // foot entered value
+            result[1] = calc * 12; // foot to inches  
+            result[2] = calc * 305; // foot to milimetres
+            result[3] = calc / 3.281; //foot to metres
+            result[4] = calc / 5280; //foot to miles
+            result[5] = calc / 3281; //foot to km
             result[6] = 'foot';
             result[7] = 'inches';
             result[8] = 'milimetres';
@@ -183,13 +190,19 @@
           break
 
         case "frommetres":
-            result[0] = calc; // metres entered milimetres
-            result[1] = calc; 
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc; 
-            result[5] = calc; 
-            result[9] = result[9] +  ' <b>converted to =</b>';
+            result[0] = calc; // metres entered value
+            result[1] = calc * 39.37 ; // metres to inches
+            result[2] = calc * 1000; // metres to mm
+            result[3] = calc * 3.281; // metres to foot
+            result[4] = calc / 1609; //metres to miles
+            result[5] = calc / 1000; //metres to km
+            result[6] = 'metres';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'miles';
+            result[11] = 'km';
+            result[6] = result[6] +  ' <b>converted to =</b>';
             for (var j = 0; j < 6; j++) 
             {
               display  = display + result[j] + ' : '+ result[j+6]+'<br>';
@@ -198,13 +211,19 @@
           break
 
         case "frommiles":
-            result[0] = calc; // miles enterd value
-            result[1] = calc; 
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc; 
-            result[5] = calc; 
-            result[10] = result[10] +  ' <b>converted to =</b>';
+            result[0] = calc; // miles entered value
+            result[1] = calc * 63360; // miles to inches 
+            result[2] = calc * 1.609e+6; // miles to mm
+            result[3] = calc * 5280; // miles to foot
+            result[4] = calc * 1609; // miles to metres
+            result[5] = calc * 1.609; // miles to km
+            result[6] = 'miles';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'metres';
+            result[11] = 'km';
+            result[6] = result[6] +  ' <b>converted to =</b>';
             for (var j = 0; j < 6; j++) 
             {
               display  = display + result[j] + ' : '+ result[j+6]+'<br>';
@@ -213,13 +232,19 @@
           break
 
         case "fromkm":
-            result[0] = calc; // km enterd value
-            result[1] = calc; 
-            result[2] = calc;
-            result[3] = calc;
-            result[4] = calc; 
-            result[5] = calc; 
-            result[11] = result[11] +  ' <b>converted to =</b>';
+            result[0] = calc; // km entered value
+            result[1] = calc * 39370; // km to inches
+            result[2] = calc * 1e+6; // km to mm
+            result[3] = calc * 3281; // km to foot
+            result[4] = calc * 1000; // km to metres
+            result[5] = calc / 1.609; // km to miles
+            result[6] = 'km';
+            result[7] = 'inches';
+            result[8] = 'milimetres';
+            result[9] = 'foot';
+            result[10] = 'metres';
+            result[11] = 'miles';
+            result[6] = result[6] +  ' <b>converted to =</b>';
             for (var j = 0; j < 6; j++) 
             {
               display  = display + result[j] + ' : '+ result[j+6]+'<br>';
@@ -235,6 +260,7 @@
    
     
   },
+  
 }
  </script>
 
