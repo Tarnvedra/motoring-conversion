@@ -2025,7 +2025,7 @@ __webpack_require__.r(__webpack_exports__);
 
         switch (unitsSelectedFrom) {
           case "frominches":
-            result[0] = calc; // inches entered value 
+            result[0] = calc; // inches entered value
 
             result[1] = calc * 25.4; //inches to mm
 
@@ -2063,7 +2063,7 @@ __webpack_require__.r(__webpack_exports__);
 
             result[4] = calc / 1.609e+6; // mm to miles
 
-            result[5] = calc / 1e+6; // mm to km 
+            result[5] = calc / 1e+6; // mm to km
 
             result[6] = 'millimetres';
             result[7] = 'inches';
@@ -2083,7 +2083,7 @@ __webpack_require__.r(__webpack_exports__);
           case "fromfoot":
             result[0] = calc; // foot entered value
 
-            result[1] = calc * 12; // foot to inches  
+            result[1] = calc * 12; // foot to inches
 
             result[2] = calc * 305; // foot to milimetres
 
@@ -2139,7 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
           case "frommiles":
             result[0] = calc; // miles entered value
 
-            result[1] = calc * 63360; // miles to inches 
+            result[1] = calc * 63360; // miles to inches
 
             result[2] = calc * 1.609e+6; // miles to mm
 
